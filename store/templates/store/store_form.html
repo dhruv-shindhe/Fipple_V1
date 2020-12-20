@@ -1,0 +1,67 @@
+{% extends 'store/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+
+
+<div class="content-section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group" >
+                <legend class="border-bottom mb-4">Add a product to your store</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <small>No affiliate link?? its fine<button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Click here</button>to learn how to get your affiliate link in no time</small>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Add</button>
+            </div>
+        </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Getting an affiliate link from Earnkaro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-3">
+            Step 1:
+          </div>
+          <div class="col-sm-7">
+            Go to <a href="https://earnkaro.com/">EarnKaro</a> and Sign up
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            Step 2:
+          </div>
+          <div class="col-sm-7">
+            Go to 'Make links' tool and paste the link of the product
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            Step 3:
+          </div>
+          <div class="col-sm-7">
+            Copy the profit link generated and come back to <a href="https://thefipple.com/">Fipple</a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
+{% include "store/footer.html" %}
+{% endblock content %}

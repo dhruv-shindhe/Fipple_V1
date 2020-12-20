@@ -1,0 +1,197 @@
+{% extends 'store/base.html' %}
+{% block content %}
+{% load static %}
+<div class="content-section">
+  <div class="container">
+    <br>
+    <p class='text-center'>Fipple is a IIM Bangalore pre-incubated startup, which is a platform that allows anyone to create thier own affiliate store.
+        Go through the 5 easy steps below and create your Fipple Store in 2 minutes and start earning!!
+    </p>
+    <br>
+    <h4 class="text-center" >Start earning in 5 easy steps using Fipple!!</h4>
+    <hr>
+    <div class="row">
+      <div class="mx-auto">
+        <h4>STEP 1:</h4>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 ">
+        <img src="{% static 'store/images/e-stores.jpg' %}" alt="" style="width:200px;height:150px;" >
+
+      </div>
+      <div class="col-sm-7 ml-5">
+        Select a product from any e-commerce site like, Flipkart, Amazon, Myntra etc which you would like to sell.
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="mx-auto">
+        <h4>STEP 2:</h4>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 ">
+
+        <img src="{% static 'store/images/step_2.png' %}" alt="" style="width:200px;height:200px;" >
+
+      </div>
+      <div class="col-sm-7 ml-5">
+        Get the affiliate link for that product, you could use Amazon affiliate or Earnkaro or Cuelinks
+        <br>
+        <br>
+        <small>No affiliate link?? its fine<button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Click here</button>to get your affiliate link in no time</small>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="mx-auto">
+        <h4>STEP 3:</h4>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 ">
+        <img src="{% static 'store/images/icon.png' %}" alt="" style="width:200px;height:150px;" >
+
+      </div>
+      <div class="col-sm-7 ml-5">
+        Create your Fipple Account, <a href="{% url 'register' %}">click here</a> to create your account
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="mx-auto">
+        <h4>STEP 4:</h4>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 ">
+        <img src="{% static 'store/images/step_4.png' %}" alt="" style="width:180px;height:180px;" >
+
+      </div>
+      <div class="col-sm-7 ml-5">
+        Go to, <a href="{% url 'store-create' %}">Add Product</a> in your Fipple account, and fill in the Product title, Product description, Product Image, and finally add your affiliate link you got in Step 2 and click on Add!!
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="mx-auto">
+        <h4>STEP 5:</h4>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 ">
+        <img src="{% static 'store/images/step_5.png' %}" alt="" style="width:180px;height:180px;" >
+
+      </div>
+      <div class="col-sm-7 ml-5">
+        Share your Fipple store link in your Instagram bio, YouTube description, and among your friends and family and earn every time someone makes a purchase through your store!!
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="mx-auto">
+        <h4 >Start earning today!!</h4>
+        <a href="{% url 'register' %}" type="button" class="btn btn-primary btn-lg">  Sign up now!!!</a>
+      </div>
+
+    </div>
+    <hr>
+    <br>
+    <h4 class=text-center>Watch the video below to see all the above steps in action</h4>
+    <br>
+    <div class="col-md-6 mx-auto">
+          <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/iw906iJ2i5I" allowfullscreen></iframe>
+          </div>
+          <br>
+
+    </div>
+
+      <h4>FAQ's</h4>
+      <b>1. How is Fipple better?</b>
+      <br>
+      <p>Fipple removes the hassel of maintaining tens of affiliate links and replaces it with one beautiful store, where you can see all your products in one place.</p>
+      <br>
+      <b>2. Do we need any investments?</b>
+      <br>
+      <p>No, we don't need any investments to earn money on Fipple</p>
+      <br>
+      <b>3. Where will I see my earnings</b>
+      <br>
+      <p>Your earnings will not be seen on Fipple, you can see your earning on the affiliate platforms like Amazon, EarnKaro or Cuelinks from where you would have got the affiliate link</p>
+      <br>
+      <b>4. Do we need to have a good amount of following?</b>
+      <br>
+      <p>No, you can share your Fipple store with your friends, followers, or anybody who is willing to buy something, just tell them to buy through your Fipple store and you could make money.</p>
+      <br>
+      <b>5. Who can earn from Fipple?</b>
+      <br>
+      <p>Students, Housewives, Influencers, YouTubers, or anyone who wants to make some spare cash, look around you there's always someone who wants to buy something, tell that person to buy through your store so that you can make money.</p>
+      <br>
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Getting an affiliate link from Earnkaro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    Step 1:
+                  </div>
+                  <div class="col-sm-7">
+                    Go to <a href="https://earnkaro.com/">EarnKaro</a> and Sign up
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    Step 2:
+                  </div>
+                  <div class="col-sm-7">
+                    Go to 'Make links' tool and paste the link of the product
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    Step 3:
+                  </div>
+                  <div class="col-sm-7">
+                    Copy the profit link generated and come back to <a href="https://thefipple.com/">Fipple</a>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+
+
+
+
+  </div>
+</div>
+{% include "store/footer.html" %}
+{% endblock content %}

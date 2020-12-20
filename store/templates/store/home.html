@@ -1,0 +1,14 @@
+{% extends "store/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<h1 class='text-center'>Welcome</h1>
+<br>
+<p>Click on
+  <a href="{% url 'store-create' %}" role="button" aria-pressed="true">New StoreProduct, </a>
+  to create a store as an individual</p>
+
+
+{% endblock content %}

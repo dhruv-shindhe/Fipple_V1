@@ -1,0 +1,17 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+
+
+
+<div class="content-section">
+  <h4>You have been logged out</h4>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+              <a class="ml-2" href="{% url 'login' %}">Login Again!</a>
+            </small>
+        </div>
+    </div>
+
+{% include "store/footer.html" %}
+{% endblock content %}

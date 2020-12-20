@@ -1,0 +1,58 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<div class="text-center mb-3">
+  {% if user.is_authenticated %}
+  {% else %}
+    <a class="btn btn-primary " href="{% url 'register' %}">Create your own store!</a>
+  {% endif %}
+</div>
+<div class="text-center mb-3">
+  <img class="rounded-circle article-img" src="{{ img_url }}">
+  <h5 class="mr-2 mb-2 mt-2" >{{ user_name }}'s Store</h5>
+  {% if user_name == user.username %}
+  <a class="btn btn-primary " href="{% url 'store-create' %}">Add Product</a>
+  <p><a href="{% url 'intro_home'%}">Learn</a>, how to add products?</p>
+  {% endif %}
+</div>
+
+{% for product in products %}
+<div class="card">
+  <!-- <div class="card-header">
+    Title
+  </div> -->
+
+  <div class="card-body">
+    <div class="article-metadata">
+      <!-- <img class="rounded-circle article-img" src="{{ product.author.profile.image.url }}">
+      <a class="mr-2" href="#">{{ product.author }}</a> -->
+      <small class="text-muted">{{ product.date_posted|date:"F d,Y" }}</small>
+    </div>
+    <br>
+    <h4 class="card-title"><a class="article-title" href="{% url 'store-detail' product.id %}">{{product.title}}</a></h4>
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+          <img class="rounded" src="{{ product.image.url }}" width="180" height="220">
+
+        </div><!--.col -->
+        <div class="col-sm-8 mt-3">
+            <p>{{product.description}}</p>
+
+        </div><!--.col -->
+
+
+
+    </div><!--./row -->
+     <br>
+    <a class="btn btn-primary" href={{product.affiliate_link}} >Buy</a>
+
+</div><!--./container -->
+
+
+    <!-- <a class="btn btn-primary stretched-link" href={{product.aff_link}} >Buy</a> -->
+  </div>
+</div>
+<br>
+{% endfor %}
+{% include "store/footer.html" %}
+{% endblock content %}

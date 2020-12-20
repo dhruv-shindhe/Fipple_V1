@@ -1,0 +1,28 @@
+{% extends 'store/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+
+
+<div class="content-section">
+        <form method="POST" action="/register/">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                <small>By signing up, you are agreeing to our <a href="{% url 'terms_and_conditions' %}">Terms and Conditions</a> and <a href="{% url 'privacy_policy' %}">Privacy Policy</a> </small>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account?<a class="ml-2" href="{% url 'login' %}">Sign In</a>
+            </small>
+        </div>
+    </div>
+
+{% include "store/footer.html" %}
+{% endblock content %}

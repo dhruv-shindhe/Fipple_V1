@@ -1,0 +1,47 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<div class="card">
+  <!-- <div class="card-header">
+    Title
+  </div> -->
+  <div class="card-body">
+    <div class="article-metadata">
+      <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+      <a class="mr-2" href="{% url 'my-store' object.author %}">{{ object.author }}</a>
+      <small class="text-muted">{{ object.date_posted|date:"F d,Y" }}</small>
+    </div>
+    <br>
+    <h4 class="card-title"><a class="article-title" href="{% url 'store-detail' object.id %}">{{object.title}}</a></h4>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <p>{{object.description}}</p>
+
+        </div><!--.col -->
+
+        <div class="col-md-6 ml-auto">
+          <img class="rounded float-right" src="{{ object.image.url }}" width="200" height="200">
+
+        </div><!--.col -->
+
+    </div><!--./row -->
+
+</div><!--./container -->
+
+
+    <br>
+    <a class="btn btn-primary" href={{object.affiliate_link}} >Buy</a>
+    <!-- <a class="btn btn-primary stretched-link" href={{product.aff_link}} >Buy</a> -->
+    <br>
+    <hr>
+    <!-- <a class="btn btn-primary stretched-link" href={{product.aff_link}} >Buy</a> -->
+    {% if object.author == user %}
+        <a class='btn btn-danger mt-1 mb-1' href="{% url 'store-delete' object.id %}">Delete</a>
+        <a class='btn btn-secondary mt-1 mb-1' href="{% url 'store-update' object.id %}">Update</a>
+    {% endif %}
+
+  </div>
+</div>
+<br>
+{% include "store/footer.html" %}
+{% endblock content %}
